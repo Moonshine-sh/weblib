@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Reader</title>
+</head>
+<body>
+<form action="/editReader" method="post">
+
+    <div>
+        <input type="number" name="id" required th:value="${reader.getId()}" readonly>
+        <label>ID</label>
+    </div>
+    <div>
+        <input type="text" name="name" required th:value="${reader.getName()}">
+        <label>Name</label>
+    </div>
+    <div>
+        <input type="text" name="surname" required th:value="${reader.getSurname()}">
+        <label>Surname</label>
+    </div>
+    <div>
+        <input type="text" name="mobNumber" required th:value="${reader.getMobNumber()}">
+        <label>Mob Number</label>
+    </div>
+    <div>
+        <input type="text" name="username" required th:value="${reader.getUsername()}">
+        <label>Username</label>
+    </div>
+    <div>
+        <input type="text" name="password" required th:value="${reader.getPassword()}">
+        <label>Password</label>
+    </div>
+    <input type="submit" value="submit">
+</form>
+</body>
+</html>

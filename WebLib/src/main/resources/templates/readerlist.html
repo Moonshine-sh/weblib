@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Readers list</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Mob number</th>
+        <th>Username</th>
+        <th>Password</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="reader:${readers}">
+        <td th:text="${reader.getName()}"></td>
+        <td th:text="${reader.getSurname()}"></td>
+        <td th:text="${reader.getMobNumber()}"></td>
+        <td th:text="${reader.getUsername()}"></td>
+        <td th:text="${reader.getPassword()}"></td>
+        <td><a th:href="'/adminPage/'+${ID}+'/readerlist/delete/'+${reader.getId()}">delete</a></td>
+    </tr>
+    </tbody>
+</table>
+<a th:href="'/adminPage/'+${ID}">return</a>
+
+</div>
+</body>
+</html>

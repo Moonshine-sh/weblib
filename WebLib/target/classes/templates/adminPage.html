@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>AdminPage</title>
+</head>
+<body>
+<h1>Admin account</h1>
+<a th:href="${admin.getId()}+'/add'">add</a>
+<a th:href="${admin.getId()}+'/readerlist'">readers</a>
+<div th:each="book : ${books}">
+    <h2 th:text="${book.getId()}+' '+${book.getName()}"></h2>
+    <h3 th:text="${book.getYearOfPubl()}+' '+${book.getAuthor()}"></h3>
+    <a th:href="${admin.getId()}+'/delete/'+${book.getId()}">delete</a>
+    <a th:href="${admin.getId()}+'/edit/'+${book.getId()}">edit</a>
+</div>
+</body>
+</html>

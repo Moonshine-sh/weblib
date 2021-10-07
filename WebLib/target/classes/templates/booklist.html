@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>My book list</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Year of Publ</th>
+        <th>Genre</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="book:${books}">
+        <td th:text="${book.getName()}"></td>
+        <td th:text="${book.getAuthor()}"></td>
+        <td th:text="${book.getYearOfPubl()}"></td>
+        <td th:text="${book.getGenreId()}"></td>
+        <td><a th:href="'/readerPage/'+${ID}+'/mybooklist/delete/'+${book.getId()}">delete</a></td>
+    </tr>
+    </tbody>
+</table>
+<a th:href="'/readerPage/'+${ID}">return</a>
+
+</div>
+</body>
+</html>
